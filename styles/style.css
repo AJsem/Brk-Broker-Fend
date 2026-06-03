@@ -243,7 +243,7 @@ main section.hero {
     align-items: center;
     gap: 2rem;
 
-    margin: 0 -1rem;
+    margin: 0 0 -3rem;
     padding: 3rem 1rem 0rem;
     font-size: 1.8rem;
 }
@@ -287,7 +287,7 @@ section.hero div.trusted::before {
 }
 
 section.hero div.trusted span {
-    color : rgb(255, 215, 255);
+    color : rgb(184, 201, 247);
 }
 
 section.hero div.hero-content h1.head {
@@ -309,8 +309,8 @@ section.hero p.descript {
 
 a.btn.register {
     margin-top: 3rem;
-    background: rgb(182, 122, 255);
-    color: white;
+    background: rgb(184, 201, 247);
+    color: rgba(0, 0, 20);
 }
 
 
@@ -319,7 +319,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     padding: 1rem;
 }
 
@@ -392,7 +392,6 @@ section.our-legacy div.scroll-years {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    /* padding-inline: 50vw; */
 }
 
 section.our-legacy div.scroll-years::-webkit-scrollbar {
@@ -424,16 +423,42 @@ section.our-legacy div.legacy-cards div.legacy-card p {
 
 
 /* Our Cutting-Edge Tech Stylings */
-section.our-tech {
-    
+section.our-tech div.img-cont {
+    width: 100%;
+    height: fit-content;
+    padding: 1.5rem;
+    border: .2rem solid rgba(64, 57, 80, .3);
+    border-radius: 2rem;
 }
 
-section.our-tech div.strategies div.strategy {
+section.our-tech div.img-cont img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    border: .1rem solid rgba(64, 57, 80, .3);
+}
+
+section.our-tech div.features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section.our-tech div.features div.feature {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 36.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: .1rem solid rgba(64, 57, 80, .3);
+}
+
+section.our-tech div.features div.feature div.feat {
     display: flex;
     gap: 2rem;
 }
 
-section.our-tech div.live-strategy h3 {
+section.our-tech div.feature div.feat h3 {
     background: linear-gradient(to right, rgb(248, 103, 6), rgb(192, 56, 2));
     -webkit-background-clip: text;
     background-clip: text;
@@ -441,8 +466,123 @@ section.our-tech div.live-strategy h3 {
     -webkit-text-fill-color: transparent;
 }
 
-section.our-tech div.live-strategy p {
+section.our-tech div.feature div.feat p {
     font-size: 1.4rem;
+}
+
+section.our-tech div.feature div.img {
+    width: 73%;
+    overflow: hidden;
+    border-radius: 2rem;
+    align-self: flex-end;
+    border: .2rem solid rgba(64, 57, 80, .3);
+}
+
+section.our-tech div.feature div.img img {
+    width: 100%;
+}
+
+section.our-tech a.btn.get-started {
+    background: linear-gradient(to right, rgb(248, 103, 6), rgb(192, 56, 2));
+    color: var(--clr-light);
+    width: fit-content;
+    align-self: center;
+    border-radius: 5rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+/* YOUR APPROACH STYLINGS */
+section.your-approach div.img-cont {
+    width: 100%;
+    height: fit-content;
+    padding: 1.5rem;
+    border: .2rem solid rgba(64, 57, 80, .3);
+    border-radius: 2rem;
+}
+
+section.your-approach div.img-cont img.approach-img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    border: .1rem solid rgba(64, 57, 80, .3);
+}
+
+section.your-approach div.how-to-start {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(64, 57, 80, .3);
+}
+
+section.your-approach div.how-to-start p {
+    font-size: 1.4rem;
+}
+
+section.your-approach div.how-to-start div.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section.your-approach div.how-to-start div.steps div.step {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: .1rem solid rgba(64, 57, 80, .3);
+    color: rgb(184, 201, 247);
+}
+
+div.steps > :last-child {
+    border-bottom: none !important;
+}
+
+section.your-approach div.how-to-start div.steps div.step span.sn {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+section.your-approach div.how-to-start div.steps div.step p.action {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+section.your-approach div.how-to-start div.steps div.step div.img-cont {
+    width: 100%;
+    height: 100%;
+    padding: .5rem;
+}
+
+section.your-approach div.how-to-start div.steps div.step div.img-cont img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+}
+
+section.your-approach p.cta {
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+section.your-approach a.btn.get-started {
+    background: rgba(0, 0, 100);
+    color: var(--clr-light);
+    width: fit-content;
+}
+
+/* Our Strength Section Stylings */
+section.our-strength div.img-cont {
+    width: 100%;
+}
+
+section.our-strength div.img-cont img {
+    width: 100%;
+    height: auto;
 }
 
 /* BTN STYLINGS */

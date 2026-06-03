@@ -28,7 +28,22 @@ const updateYear = () => {
     spanYear.textContent = date.getFullYear();
 }
 
+const updateUserCount = () => {
+    const tUserSpan = document.querySelector(".total-users");
+
+    setInterval(
+        () => {
+            let totalUser = Number(localStorage.getItem("tUsers") || tUserSpan.textContent.replace(/,/g, ""));
+            const randomNum = Math.floor(Math.random() * ((50-21))) + 20;
+            totalUser += randomNum;
+            localStorage.setItem("tUsers", totalUser);
+            tUserSpan.textContent = totalUser.toLocaleString();
+        },
+    5000);
+}
+
 export default {
     navigation,
-    updateYear
+    updateYear,
+    updateUserCount
 }
