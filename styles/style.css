@@ -596,7 +596,9 @@ section.blog div.recent-blogs div.blog-card {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 2rem;
     margin-bottom: 6rem;
+    border-bottom: .1rem solid rgba(64, 57, 80, .3);
 }
 
 section.blog div.recent-blogs > :last-child {
