@@ -605,7 +605,7 @@ section.blog div.recent-blogs > :last-child {
 
 section.blog div.recent-blogs div.blog-card img {
     width: 100%;
-    height: 20rem;
+    height: auto;
 }
 
 section.blog a.btn.read-blog {
