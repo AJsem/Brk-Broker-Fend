@@ -647,7 +647,16 @@ div.testimonial-cards div.testimonial-card div.img-name-cont div.img {
     width: 5rem;
     height: 5rem;
     border-radius: 50%;   
-    border: .1rem solid white; 
+    border: .1rem solid rgba(64, 57, 80, .3); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+div.testimonial-cards div.testimonial-card div.img-name-cont div.img img {
+    width: 100%;
+    height: auto;
 }
 
 section.testimonials a.btn.get-started {

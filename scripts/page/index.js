@@ -1,14 +1,10 @@
 "use strict";
 import utils from '../utilities/utils.js';
+window.scrollToCard = utils.scrollToCard;
+window.dropDownEvent = utils.dropDownEvent;
 
-console.log("We made it");
 utils.navigation();
 utils.updateYear();
 utils.updateUserCount();
-
-// document.querySelector("section.our-legacy div.scroll-years button")
-// .scrollIntoView({
-//     behavior: "smooth",
-//     inline: "center",
-//     block: "nearest"
-// });
+utils.updateSwiperYear();
+utils.initSwiperRandom();

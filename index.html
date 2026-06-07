@@ -122,13 +122,13 @@
                 </div>
             </div>
             <div class="scroll-years">
-                <button onclick="scrollToCard('card-2020')">2020</button>
-                <button onclick="scrollToCard('card-2021')">2021</button>
-                <button onclick="scrollToCard('card-2022')">2022</button>
-                <button onclick="scrollToCard('card-2023')">2023</button>
-                <button onclick="scrollToCard('card-2024')" class="active">2024</button>
-                <button onclick="scrollToCard('card-2025')">2025</button>
-                <button onclick="scrollToCard('card-2026')">2026</button>
+                <button onclick="scrollToCard('card-2020', this)">2020</button>
+                <button onclick="scrollToCard('card-2021', this)">2021</button>
+                <button onclick="scrollToCard('card-2022', this)">2022</button>
+                <button onclick="scrollToCard('card-2023', this)">2023</button>
+                <button onclick="scrollToCard('card-2024', this)" class="active">2024</button>
+                <button onclick="scrollToCard('card-2025', this)">2025</button>
+                <button onclick="scrollToCard('card-2026', this)">2026</button>
             </div>
         </section>
         <section class="our-tech">
@@ -270,7 +270,7 @@
                     <p>"AitTrade has completely transformed my trading experience. The AI-driven insights have helped me make smarter decisions and significantly increase my profits."</p>
                     <div class="img-name-cont">
                         <div class="img">
-                            <img src="" alt="">
+                            <img src="./assets/images/profile-ahmed.jfif" alt="">
                         </div>
                         <p class="name">- Ahmed D.</p>
                     </div>
@@ -279,7 +279,7 @@
                     <p>"I was new to trading, but AitTrade's user-friendly platform and powerful tools made it easy for me to get started and see results quickly."</p>
                     <div class="img-name-cont">
                         <div class="img">
-                            <img src="" alt="">
+                            <img src="./assets/images/profile-sarah.jfif" alt="">
                         </div>
                         <p class="name">- Sarah K.</p>
                     </div>
@@ -288,7 +288,7 @@
                     <p>"The live strategy testing feature is a game-changer. It allows me to refine my strategies in real-time and stay ahead of the market."</p>
                     <div class="img-name-cont">
                         <div class="img">
-                            <img src="" alt="">
+                            <img src="./assets/images/profile-michael.jfif" alt="">
                         </div>
                         <p class="name">- Michael S.</p>
                     </div>
@@ -297,7 +297,7 @@
                     <p>"With AitTrade, I feel confident in my trading decisions. The platform's AI capabilities have given me a competitive edge in the market."</p>
                     <div class="img-name-cont">
                         <div class="img">
-                            <img src="" alt="">
+                            <img src="./assets/images/profile-emily.jfif" alt="">
                         </div>
                         <p class="name">- Emily R.</p>
                     </div>
@@ -306,7 +306,7 @@
                     <p>"AitTrade's customer support is exceptional. They are always there to help me with any questions or issues I may have."</p>
                     <div class="img-name-cont">
                         <div class="img">
-                            <img src="" alt="">
+                            <img src="./assets/images/profile-david.jfif" alt="">
                         </div>
                         <p class="name">- David L.</p>
                     </div>
@@ -315,7 +315,7 @@
                     <p>"I highly recommend AitTrade to anyone looking to take their trading to the next level. The platform's features and community support are unmatched."</p>
                     <div class="img-name-cont">
                         <div class="img">
-                            <img src="" alt="">
+                            <img src="./assets/images/profile-marcos.jfif" alt="">
                         </div>
                         <p class="name">- Marcos M.</p>
                     </div>
@@ -335,43 +335,43 @@
             <h2>Frequently Asked Questions</h2>
             <p>Have questions? We've got you covered. Check out our FAQ section for answers to common questions about AitTrade and how to get started.</p>
             <div class="faq-cards">
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>What kind of cryptocurrency does AitTrade support?</h5>
                     <p>AitTrade supports a wide range of popular cryptocurrencies, including Bitcoin (BTC), Ethereum (ETH), Ripple (XRP), and many others. We continuously evaluate and add new cryptocurrencies to our platform based on user demand and market trends.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>What trading tools are available on AitTrade?</h5>
                     <p>AitTrade offers a comprehensive suite of trading tools, including real-time market data, technical analysis indicators, charting capabilities, and automated trading features to help you make informed decisions.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>How do I get started with AitTrade?</h5>
                     <p>To get started, simply sign up for an account, complete the verification process, and deposit funds. Once your account is set up, you can start exploring our features and trading on the platform.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>Is AitTrade suitable for beginners?</h5>
                     <p>Yes! AitTrade is designed to be user-friendly and accessible for traders of all experience levels. We offer a range of educational resources and support to help beginners get started.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>Is my data and funds secure on AitTrade?</h5>
                     <p>Yes, AitTrade prioritizes the security of our users' data and funds. We implement industry-leading security measures, including encryption, two-factor authentication, and regular security audits to ensure a safe trading environment.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>What kind of support does AitTrade offer?</h5>
                     <p>AitTrade provides exceptional customer support through various channels, including live chat, email, and phone support. Our team is always ready to assist you with any questions or issues you may have.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>How can I contact AitTrade support?</h5>
                     <p>You can reach out to our support team through the live chat feature on our website, by sending an email to <span class="support-email">support@aittrade.com</span>, or by calling our toll-free number. Our support team is available 24/7 to assist you.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>What are the trading hours for AitTrade?</h5>
                     <p>AitTrade is available 24/7, allowing you to trade at any time that suits your schedule. Our platform operates continuously to provide you with uninterrupted access to the cryptocurrency markets.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>What is the minimum deposit amount for AitTrade?</h5>
                     <p>The minimum deposit amount for AitTrade varies depending on the payment method you choose. Please check our website for the most up-to-date information on deposit requirements.</p>
                 </div>
-                <div class="faq-card">
+                <div class="faq-card" onclick="dropDownEvent(this)">
                     <h5>Is AitTrade regulated?</h5>
                     <p>AitTrade is committed to compliance and operates within the regulatory frameworks of the jurisdictions in which we operate. We work closely with regulatory authorities to ensure that our platform meets all applicable legal and regulatory requirements.</p>
                 </div>
