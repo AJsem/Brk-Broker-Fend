@@ -1,3 +1,5 @@
+let bool = false;
+
 const scrolledNav = () => {
     const navBar = document.querySelector("nav");
 
@@ -54,9 +56,6 @@ const scrollToCard = function (cardTagId, btn) {
         card.classList.remove("active");
     });
 
-    btn.classList.add("active");
-    card.classList.add("active");
-
     btn.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
@@ -68,10 +67,25 @@ const scrollToCard = function (cardTagId, btn) {
         block: "nearest",
         inline: "center"  
     });
+
+    btn.classList.add("active");
+    card.classList.add("active");
+
+    if(bool == false) {
+        bool = true;
+        setTimeout(()=>{
+            bool = false;
+        }, 1000)
+    }
 }
 
 const updateSwiperYear = () => {
     const swiper = document.querySelector("section.our-legacy div.legacy-cards");
+    const slideWidth = swiper.querySelector(".legacy-card").offsetWidth;
+    const style = getComputedStyle(swiper);
+    const gap = parseInt(style.columnGap || style.gap || 0);
+    console.log(slideWidth);
+    console.log("Gap: ", gap);
     const yearsContainer = document.querySelector("section.our-legacy div.scroll-years");
 
     const allCards = document.querySelectorAll(
@@ -83,7 +97,7 @@ const updateSwiperYear = () => {
     );
 
     swiper.addEventListener("scroll", () => {
-        let currentIndex = Math.round(swiper.scrollLeft / swiper.clientWidth);
+        let currentIndex = Math.round(swiper.scrollLeft / (slideWidth + gap));
 
         if (currentIndex > allCards.length - 1)
             currentIndex = allCards.length - 1;

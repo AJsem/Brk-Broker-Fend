@@ -239,7 +239,7 @@ main section.hero {
     z-index: 2;
 
     width: 100%;
-    max-width: 60rem;
+    /* max-width: 60rem; */
     min-height: fit-content;
 
     color: var(--clr-light);
@@ -340,6 +340,8 @@ section.our-legacy {
     max-width: 60rem;
     padding: 0 2rem;
     gap: 3rem;
+    display: flex;
+    flex-direction: column;
 }
 section.our-legacy div.legacy-cards {
     display: flex;
@@ -399,6 +401,7 @@ section.our-legacy div.scroll-years {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    align-self: center;
 }
 
 section.our-legacy div.scroll-years::-webkit-scrollbar {
@@ -455,9 +458,9 @@ section.our-tech div.features div.feature {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 36.5rem;
+    /* max-width: 36.5rem; */
     padding-bottom: 1.5rem;
-    border-bottom: .1rem solid rgba(64, 57, 80, .3);
+    border-bottom: .1rem solid rgba(64, 57, 80, .7);
 }
 
 section.our-tech div.features div.feature div.feat {
@@ -591,14 +594,20 @@ section.our-strength div.img-cont img {
 }
 
 /* Blog Post Stylings */
+section.blog div.recent-blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+}
+
 section.blog div.recent-blogs div.blog-card {
     font-size: 1.4rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
-    margin-bottom: 6rem;
-    border-bottom: .1rem solid rgba(64, 57, 80, .3);
+    margin-bottom: 6rem 6rem 3rem;
+    border-bottom: .1rem solid rgba(64, 57, 80, .7);
 }
 
 section.blog div.recent-blogs > :last-child {
@@ -623,17 +632,29 @@ section.blog a.btn.read-blog {
 }
 
 /* Testimonial section stylings  */
+section.testimonials div.testimonial-cards {
+    display: grid;
+    gap: 3rem;
+}
+
 section.testimonials div.testimonial-cards div.testimonial-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 2rem;
-    margin-bottom: 4rem;
+    background: rgb(184, 201, 247);
+    color: rgb(3, 3, 5);
+    padding: 1.5rem;
+    border-radius: .5rem;
 }
 
 section.testimonials div.testimonial-cards div.testimonial-card p {
     font-size: 1.4rem;
+}
+
+section.testimonials div.testimonial-cards div.testimonial-card p.name {
+    font-weight: 500;
 }
 
 div.testimonial-cards div.testimonial-card div.img-name-cont {
@@ -681,14 +702,21 @@ section.access-anywhere div.img-cont img {
 }
 
 /* FAQ Stylings */
+section.faq div.faq-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    gap: 3rem;
+    justify-content: center;
+}
+
 section.faq div.faq-cards div.faq-card {
     display: flex;
     flex-direction: column;
     gap: 3rem;
     padding: 1.5rem;
-    margin-bottom: 3rem;
     border: .2rem solid rgba(64, 57, 80, .3);
     cursor: pointer;
+    height: fit-content;
 }
 
 section.faq div.faq-cards > :last-child {
@@ -706,6 +734,7 @@ section.faq div.faq-cards div.faq-card.active p {
 
 section.faq a.btn.read-faq {
     background: rgba(64, 57, 80, .3);
+    color: var(--clr-light);
     width: fit-content;
 }
 
@@ -713,10 +742,11 @@ section.faq a.btn.read-faq {
 section.stay-ahead {
     padding: 4rem;
     gap: 1rem;
-    margin: 2rem;
+    margin: 0rem 2rem 6rem 2rem;
     text-align: center;
     background: rgba(64, 57, 80, .3);
     border-radius: 3rem;
+    max-width: 40rem;
 }
 
 section.stay-ahead a.btn.register {
@@ -857,4 +887,91 @@ h2 {
 
 h3 {
     font-size: var(--font-size-h3);
+}
+
+@media (min-width: 620px) {
+    section.testimonials div.testimonial-cards {
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 24rem));
+        justify-content: center;
+    }
+
+    section.our-tech div.features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section.our-tech div.features div.feature {
+        max-width: none;
+        margin-left: 2rem;
+    }
+
+    section.our-legacy {
+        max-width: revert;
+        width: 100%;
+    }
+
+    section.our-legacy div.legacy-cards div.legacy-card {
+        min-width: revert;
+        flex: 0 0 clamp(400px, 90vw, 40%);
+        scroll-snap-align: center;
+    }
+}
+
+@media (min-width: 680px) {
+    section.hero {
+        max-width: none;
+    }
+
+    section.hero div.hero-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        /* column-gap: 4rem; */
+    }
+
+    section.hero div.hero-content h1.head {
+        grid-row: span 4;
+        font-size: 5rem;
+    }
+
+    section.hero div.hero-content div.one {
+        margin-top: 1.5rem;
+    }
+
+    section.hero div.hero-content p.descript {
+        grid-row: span 3;
+    }
+
+    nav ul.links {
+        width: 40%;
+    }
+}
+
+@media (min-width: 800px) {
+    footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 2rem;
+    }
+
+    section.your-approach div.how-to-start div.steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+        gap: 2rem;
+    }
+
+    .margin {
+        margin-right: 50%;
+    }
+
+    nav ul.links {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1050px) {
+    main.container,
+    nav, footer {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
 }
