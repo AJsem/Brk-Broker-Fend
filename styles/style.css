@@ -395,6 +395,7 @@ section.our-legacy div.scroll-years button {
 
 section.our-legacy div.scroll-years {
     display: flex;
+    width: 100%;
     margin: 0rem -3rem;
     gap: 3rem;
     overflow-x: auto;
