@@ -20,9 +20,10 @@
 
     <title>AitTrade</title>
 
-    <link rel="stylesheet" href="../../../styles/normalize.css">
-    <link rel="stylesheet" href="../../../styles/style.css">
-    <link rel="stylesheet" href="../../../styles/faq.css">
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/register.css">
+    <link rel="stylesheet" href="../../styles/mainBg.css">
     <link rel="icon" href="../../assets/images/favicon.ico">
 </head>
 <body id="top">
@@ -38,142 +39,135 @@
             <span></span>
         </div>
         <ul class="links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../../index.html">Home</a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../insights.html">Insights</a></li>
-            <li><a href="../faq.html" class="c-opened">Faq</a></li>
+            <li><a href="../faq.html">Faq</a></li>
             <li><a href="../support.html">Support</a></li>
-            <li><a href="../auth/login.html">Login</a></li>
-            <li><a href="../register.html">Register</a></li>
+            <li><a href="./auth/login.html">Login</a></li>
         </ul>
     </nav>
     <main class="container">
-        
-        <section class="faq">
-            <h2>Frequently Asked Questions</h2>
-            <p class="margin">Have questions? We've got you covered. Check out our FAQ section for answers to common questions about AitTrade and how to get started.</p>
-            <div class="faq-cards">
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>What kind of cryptocurrency does AitTrade support?</h5>
-                    <p>AitTrade supports a wide range of popular cryptocurrencies, including Bitcoin (BTC), Ethereum (ETH), Ripple (XRP), and many others. We continuously evaluate and add new cryptocurrencies to our platform based on user demand and market trends.</p>
+        <h1>Join Millions of Traders Worldwide</h1>
+        <p>Sign up today and take the first step toward smarter investing, financial growth, and market opportunities.</p>
+        <p>Fill the form below to get started</p>
+
+        <form action="" novalidate>
+            <div class="input-field">
+                <div class="input firstname-input">
+                    <label for="firstname">Enter Firstname</label>
+                    <input type="text" id="firstname" name="firstname" >
+                    <div class="err-txt hidden firstname-err-txt">This field is required</div>
                 </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>What trading tools are available on AitTrade?</h5>
-                    <p>AitTrade offers a comprehensive suite of trading tools, including real-time market data, technical analysis indicators, charting capabilities, and automated trading features to help you make informed decisions.</p>
+                
+                <div class="input lastname-input">
+                    <label for="lastname">Enter Lastname</label>
+                    <input type="text" id="lastname" name="lastname" >
+                    <div class="err-txt hidden lastname-err-txt">This field is required</div>
                 </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>How do I get started with AitTrade?</h5>
-                    <p>To get started, simply sign up for an account, complete the verification process, and deposit funds. Once your account is set up, you can start exploring our features and trading on the platform.</p>
-                </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>Is AitTrade suitable for beginners?</h5>
-                    <p>Yes! AitTrade is designed to be user-friendly and accessible for traders of all experience levels. We offer a range of educational resources and support to help beginners get started.</p>
-                </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>Is my data and funds secure on AitTrade?</h5>
-                    <p>Yes, AitTrade prioritizes the security of our users' data and funds. We implement industry-leading security measures, including encryption, two-factor authentication, and regular security audits to ensure a safe trading environment.</p>
-                </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>What kind of support does AitTrade offer?</h5>
-                    <p>AitTrade provides exceptional customer support through various channels, including live chat, email, and phone support. Our team is always ready to assist you with any questions or issues you may have.</p>
-                </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>How can I contact AitTrade support?</h5>
-                    <p>You can reach out to our support team through the live chat feature on our website, by sending an email to <span class="support-email">support@aittrade.com</span>, or by calling our toll-free number. Our support team is available 24/7 to assist you.</p>
-                </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>What are the trading hours for AitTrade?</h5>
-                    <p>AitTrade is available 24/7, allowing you to trade at any time that suits your schedule. Our platform operates continuously to provide you with uninterrupted access to the cryptocurrency markets.</p>
-                </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>What is the minimum deposit amount for AitTrade?</h5>
-                    <p>The minimum deposit amount for AitTrade varies depending on the payment method you choose. Please check our website for the most up-to-date information on deposit requirements.</p>
-                </div>
-                <div class="faq-card" onclick="dropDownEvent(this)">
-                    <h5>Is AitTrade regulated?</h5>
-                    <p>AitTrade is committed to compliance and operates within the regulatory frameworks of the jurisdictions in which we operate. We work closely with regulatory authorities to ensure that our platform meets all applicable legal and regulatory requirements.</p>
+
+                <div class="input email-input">
+                    <label for="email">Enter Email Address</label>
+                    <input type="email" id="email" name="email" >
+                    <div class="err-txt hidden email-err-txt">Please enter a valid email address</div>
                 </div>
             </div>
 
-            <a href="../insights.html" class="btn read-faq">Read Our FAQ</a>
-        </section>
+            <div class="flex sex-mf">
+                <div class="sex flex">
+                    <label for="sex">Select sex</label>
+                    <div class="flex">
+                        <input type="radio" name="sex" value="male" id="male-sex" class="hidden">
+                        <label for="male-sex" class="sex"><span>Male</span></label>
+                    
+                        <input type="radio" name="sex" value="female" id="female-sex" class="hidden">
+                        <label for="female-sex" class="sex"><span>Female</span></label>
+                    </div>
+                </div>
+                <div class="err-txt hidden sex-err-txt">Please select query type</div>
+            </div>
 
-        <section class="stay-ahead">
-            <div class="head">Stay ahead with lightening-fast trading and cutting-edge AI enhanced tech</div>
-            <a href="../register.html" class="btn register">Start Trading</a>
-        </section>
-    </main>
+            <div class="flex">
+                <label for="password">Enter password</label>
+                <input type="password" name="password" placeholder="Password">
+                <div class="err-txt hidden noMatchPassword-err-txt">The password do not match</div>
+                <div class="err-txt hidden password-err-txt">This field is required</div>
+                <div class="err-txt hidden weakPassword-err-txt">Password must be at least 6 characters long and include uppercase, lowercase, a number, and a special character</div>
+            </div>
+
+            <div class="flex">
+                <label for="password">Re-enter password</label>
+                <input type="password" name="rePassword" placeholder="Confirm password">
+                <div class="err-txt hidden noMatchPassword-err-txt">The password do not match</div>
+                <div class="err-txt hidden rePassword-err-txt">This field is required</div>
+            </div>
+
+            <div class="consent-input-field">
+                <input type="checkbox" name="consent" value="consent" id="consent" class="hidden">
+
+                <div class="consent-flex">
+                    <label for="consent" class="check-box">
+                    <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <!-- Border box (square corners) -->
+                        <rect class="border" x="0.75" y="0.75" width="16.5" height="16.5" fill="none" stroke="#0C7D69" stroke-width="1.5" />
+
+                        <!-- Filled background (only visible when checked) -->
+                        <rect class="fill-box" x="0.75" y="0.75" width="16.5" height="16.5" fill="#0C7D69" style="display: none;" />
+
+                        <!-- White checkmark (only visible when checked) -->
+                        <path class="tick" fill="#fff" d="M13.28 7.28l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.06 1.06Z" style="display: none;" />
+                    </svg>
+                    </label>
+                    
+                    <label for="consent">I confirm that I am at least 18 years old</label>
+                </div>
+                <div class="err-txt hidden consent-err-txt">You need to be 18 years and above</div>
+            </div>
+
+            <div class="consent-input-field">
+                <input type="checkbox" name="consent-term" value="consent-term" id="consent-term" class="hidden">
+
+                <div class="consent-flex">
+                    <label for="consent-term" class="check-box">
+                    <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <!-- Border box (square corners) -->
+                        <rect class="border" x="0.75" y="0.75" width="16.5" height="16.5" fill="none" stroke="#0C7D69" stroke-width="1.5" />
+
+                        <!-- Filled background (only visible when checked) -->
+                        <rect class="fill-box" x="0.75" y="0.75" width="16.5" height="16.5" fill="#0C7D69" style="display: none;" />
+
+                        <!-- White checkmark (only visible when checked) -->
+                        <path class="tick" fill="#fff" d="M13.28 7.28l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.06 1.06Z" style="display: none;" />
+                    </svg>
+                    </label>
+                    
+                    <label for="consent-term">I agree to the Terms & Conditions</label>
+                </div>
+                <div class="err-txt hidden consent-err-txt">To submit this form, please agree to terms & conditions</div>
+            </div>      
+            <div class="submit flex">
+                <button type="submit">Register now</button>
+            </div>      
+        </form>
+
+        <a href="" class="google-btn">
+            <img src="../../assets/images/google.png" alt="">
+            <p>Sign-up with Google</p>
+        </a>
+
+        <div class="signUp">
+            <p>Already have an account?</p>
+            <a href="./login.html">Sign in</a>
+        </div>	
 
     <footer>
-         <div class="foot-nav-links">
-            <h3>Navigation</h3>
-            
-            <ul class="links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../insights.html">Insights</a></li>
-                <li><a href="../faq.html" class="c-opened">Faq</a></li>
-                <li><a href="../support.html">Support</a></li>
-                <li><a href="../auth/login.html">Login</a></li>
-                <li><a href="../register.html">Register</a></li>
-            </ul>
-        </div>
-
-        <div class="contact">
-            <h3>Contact</h3>
-            <div class="contacts-list">
-                <li><a class="phone" href="tel:"></a></li>
-                <li><a href="mailto:support@aittrade.com" class="email">support@aittrade.com</a></li>
-            </div>
-        </div>
-
-        <div class="disclaimers">
-            <h5>Regulatory & Risk Disclosure</h5>
-            <p>
-                AitTrade is a trading name of AitTrade Ltd, a company registered under the U.S. Securities and Exchange Commission (SEC) for securities activities, including stocks, ETFs, and selected digital assets. AitTrade Ltd is regulated by the U.S. Securities and Exchange Commission (SEC) under license number SEC CRD# 4218458.
-
-                Trading and investing in financial markets involve substantial risk and may not be suitable for all investors. The value of investments can fluctuate, and investors may lose part or all of their invested capital. Past performance is not indicative of future results.
-
-                Before trading, investors should carefully assess their financial circumstances, investment objectives, and risk tolerance. It is important to ensure that the risks associated with trading are fully understood and, where appropriate, to seek independent financial, legal, or tax advice.
-
-                By accessing or using AitTrade's services, users acknowledge and accept the risks associated with investing and trading in financial markets.
-
-            </p>
-        </div>
-
-        <div class="social-media">
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.88 3.77-3.88 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12"/>
-                </svg>
-            </a>
-
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5zm0 2h10c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3m11.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10m0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6"/>
-                </svg>
-            </a>
-
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46 2.48 2.48 0 0 0 4.98 3.5M3 9h4v12H3zm7 0h3.83v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14V21h-4v-5.34c0-1.27-.02-2.9-1.77-2.9s-2.04 1.38-2.04 2.8V21h-4z"/>
-                </svg>
-            </a>
-
-            <a href="https://x.com" target="_blank" aria-label="X">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.9 2H22l-6.8 7.77L23 22h-6.2l-4.85-6.35L6.4 22H3.3l7.27-8.3L1 2h6.35l4.38 5.8zm-1.1 18h1.72L6.42 3.9H4.58z"/>
-                </svg>
-            </a>
-        </div>
-        
-        <a href="#top" class="back-top">Back to Top</a>
+         <small>Protected by 2FA & SSL Encryption</small>
 
         <div class="copyright">
             <p>Trading | Financial Services | Growth</p>
             <p >&copy <span class="year"></span> AitTrade. All rights reserved.</p>
         </div>
     </footer>
-    <script type="module" src="../scripts/page/index.js" defer></script>
+    <script type="module" src="../../scripts/page/index.js" defer></script>
 </body>
 </html>

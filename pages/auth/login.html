@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../styles/normalize.css">
     <link rel="stylesheet" href="../../styles/style.css">
     <link rel="stylesheet" href="../../styles/login.css">
+    <link rel="stylesheet" href="../../styles/mainBg.css">
     <link rel="icon" href="../../assets/images/favicon.ico">
 </head>
 <body id="top">
@@ -38,18 +39,17 @@
             <span></span>
         </div>
         <ul class="links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../../index.html">Home</a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../insights.html">Insights</a></li>
             <li><a href="../faq.html" class="c-opened">Faq</a></li>
             <li><a href="../support.html">Support</a></li>
-            <li><a href="../auth/login.html">Login</a></li>
-            <li><a href="../register.html">Register</a></li>
+            <li><a href="./register.html">Register</a></li>
         </ul>
     </nav>
     <main class="container">
         <h2>Welcome Back</h2>
-        <form action="">
+        <form action="" novalidate>
             <div class="input-group">
                 <label for="email">Email Address</label>
                 <input type="email" name="email">
@@ -60,7 +60,7 @@
                 <input type="password" name="password">
             </div>
 
-            <div class="group">
+            <div class="group remember">
                 <div class="options">
                     <label for="checkbox">
                         <input type="checkbox">

@@ -50,6 +50,7 @@ form div.group {
     display: flex;
     gap: 2rem;
     font-size: 1.4rem;
+    cursor: pointer;
 }
 
 form div.group div.options input {
@@ -98,8 +99,8 @@ main.container div.google button img {
 }
 
 main.container div.signUp {
-    align-self: flex-start;
-    margin-left: 2.5rem;
+    align-self: center;
+    text-align: center;
     font-size: 1.4rem;
     display: flex;
     gap: 1rem;
