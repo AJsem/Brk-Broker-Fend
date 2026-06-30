@@ -1,20 +1,11 @@
-body {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-}
-
 main.container {
-    padding-top: 5rem;
+    padding-top: 8rem;
     margin-bottom: 4rem;
     max-width: 40rem;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
+    margin-top: 2rem;
     padding: 0 2.5rem;
 }
 
@@ -24,20 +15,14 @@ form div.input-group {
     gap: 1rem;
 }
 
-form div.input-group label {
-    font-size: 1.4rem;
-}
-
 form div.input-group input {
-    padding: .7rem 1.5rem;
+    padding: 1rem 1.5rem;
     border-radius: .5rem;
     border: .1rem solid transparent;
-    font-size: 1.6rem;
 }
 
 form button {
-    padding: .7rem 1.5rem;
-    font-size: 1.6rem;
+    padding: 1rem 1.5rem;
     font-weight: 500;
     border-radius: .5rem;
     border: .1rem solid transparent;
@@ -49,7 +34,6 @@ form button {
 form div.group {
     display: flex;
     gap: 2rem;
-    font-size: 1.4rem;
     cursor: pointer;
 }
 
@@ -62,63 +46,4 @@ form div.group div.options label {
     display: flex;
     gap: .5rem;
     align-items: center;
-}
-
-main.container div.google {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-main.container a.google-btn {
-    margin-top: 3rem;
-    display: flex;
-    gap: .5rem;
-    align-items: center;
-    padding: .3rem 1.5rem;
-    border: .1rem solid grey;
-    border-radius: .5rem;
-    text-decoration: none;
-    color: var(--clr-light);
-    font-size: 1.6rem;
-    width: 23rem;
-}
-
-main.container a.google-btn img {
-    width: 3rem;
-    height: auto;
-    margin-top: .3rem;
-    margin-left: -.6rem;
-}
-
-main.container div.google button img {
-    width: 100%;
-    height: auto;
-}
-
-main.container div.signUp {
-    align-self: center;
-    text-align: center;
-    font-size: 1.4rem;
-    display: flex;
-    gap: 1rem;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-}
-
-footer small {
-    align-self: center;
-}
-
-@media (min-width: 1050px) {
-    main.container {
-        padding-left: revert;
-        padding-right: revert;
-    }
 }

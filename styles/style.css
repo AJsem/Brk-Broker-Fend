@@ -13,6 +13,7 @@
     --clr-light: #ffffff;
     --clr-dark: #1F1B16;
     --clr-txt: #3F3A3A;
+    --clr-linear-btn: linear-gradient(to right, var(--clr-secondary-2), var(--clr-secondary));
 
     
     --clr-txt-1: #1F2937/*#2F3A34*/;
@@ -379,7 +380,7 @@ section.our-legacy div.legacy-cards div.legacy-card#card-2024 p{
     font-size: 3.5rem; 
     font-weight: 500;
     line-height: 1.2;
-    background: linear-gradient(to right, var(--clr-secondary-2), var(--clr-secondary));
+    background: var(--clr-linear-btn);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -395,13 +396,14 @@ section.our-legacy div.scroll-years button {
     height: auto;
     border-radius: 2rem;
     padding : .4rem 1rem;
-    background: linear-gradient(to right, var(--clr-secondary-2), var(--clr-secondary));
+    background: var(--clr-linear-btn);
     color: var(--clr-light);
     font-size: 1.6rem;
 }
 
 section.our-legacy div.scroll-years {
     display: flex;
+    align-self: center;
     width: 100%;
     margin: 0rem -3rem;
     gap: 3rem;
@@ -409,7 +411,6 @@ section.our-legacy div.scroll-years {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    align-self: center;
 }
 
 section.our-legacy div.scroll-years::-webkit-scrollbar {
@@ -477,7 +478,7 @@ section.our-tech div.features div.feature div.feat {
 }
 
 section.our-tech div.feature div.feat h3 {
-    background: linear-gradient(to right, var(--clr-secondary-2), var(--clr-secondary));
+    background: var(--clr-linear-btn);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -501,7 +502,7 @@ section.our-tech div.feature div.img img {
 }
 
 section.our-tech a.btn.get-started {
-    background: linear-gradient(to right, var(--clr-secondary-2), var(--clr-secondary));
+    background: var(--clr-linear-btn);
     color: var(--clr-light);
     width: fit-content;
     align-self: center;
@@ -629,7 +630,6 @@ section.blog div.recent-blogs div.blog-card img {
 
 section.blog a.btn.read-blog {
     background: var(--clr-light);
-    /* linear-gradient(to right, var(--clr-secondary-2), var(--clr-secondary)); */
     color: var(--clr-pri-subtle);
     font-weight: 500;
     width: fit-content;
@@ -710,6 +710,10 @@ section.access-anywhere div.img-cont img {
 }
 
 /* FAQ Stylings */
+section.faq {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
 section.faq div.faq-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
@@ -972,12 +976,18 @@ h3 {
     nav ul.links {
         width: 40%;
     }
+
+    section.our-legacy div.scroll-years {
+        display: flex;
+        align-self: space-evenly;
+        justify-content: space-evenly;
+    }
 }
 
 @media (min-width: 1050px) {
     main.container,
     nav, footer {
-        padding-left: 8rem;
-        padding-right: 8rem;
+        padding-left: 12rem;
+        padding-right: 12rem;
     }
 }

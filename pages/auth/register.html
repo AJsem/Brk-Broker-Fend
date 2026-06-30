@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../styles/normalize.css">
     <link rel="stylesheet" href="../../styles/style.css">
     <link rel="stylesheet" href="../../styles/register.css">
-    <link rel="stylesheet" href="../../styles/mainBg.css">
+    <link rel="stylesheet" href="../../styles/auth-shared-styles.css">
     <link rel="icon" href="../../assets/images/favicon.ico">
 </head>
 <body id="top">
@@ -44,13 +44,15 @@
             <li><a href="../insights.html">Insights</a></li>
             <li><a href="../faq.html">Faq</a></li>
             <li><a href="../support.html">Support</a></li>
-            <li><a href="./auth/login.html">Login</a></li>
+            <li><a href="./login.html">Login</a></li>
         </ul>
     </nav>
     <main class="container">
-        <h1>Join Millions of Traders Worldwide</h1>
-        <p>Sign up today and take the first step toward smarter investing, financial growth, and market opportunities.</p>
-        <p>Fill the form below to get started</p>
+        <div class="intro-txt">
+            <h1>Join Millions of Traders Worldwide</h1>
+            <p>Sign up today and take the first step toward smarter investing, financial growth, and market opportunities.</p>
+        </div>
+        <p class="instruct">Fill the form below to get started</p>
 
         <form action="" novalidate>
             <div class="input-field">
@@ -87,64 +89,69 @@
                 <div class="err-txt hidden sex-err-txt">Please select query type</div>
             </div>
 
-            <div class="flex">
-                <label for="password">Enter password</label>
-                <input type="password" name="password" placeholder="Password">
-                <div class="err-txt hidden noMatchPassword-err-txt">The password do not match</div>
-                <div class="err-txt hidden password-err-txt">This field is required</div>
-                <div class="err-txt hidden weakPassword-err-txt">Password must be at least 6 characters long and include uppercase, lowercase, a number, and a special character</div>
-            </div>
-
-            <div class="flex">
-                <label for="password">Re-enter password</label>
-                <input type="password" name="rePassword" placeholder="Confirm password">
-                <div class="err-txt hidden noMatchPassword-err-txt">The password do not match</div>
-                <div class="err-txt hidden rePassword-err-txt">This field is required</div>
-            </div>
-
-            <div class="consent-input-field">
-                <input type="checkbox" name="consent" value="consent" id="consent" class="hidden">
-
-                <div class="consent-flex">
-                    <label for="consent" class="check-box">
-                    <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                        <!-- Border box (square corners) -->
-                        <rect class="border" x="0.75" y="0.75" width="16.5" height="16.5" fill="none" stroke="#0C7D69" stroke-width="1.5" />
-
-                        <!-- Filled background (only visible when checked) -->
-                        <rect class="fill-box" x="0.75" y="0.75" width="16.5" height="16.5" fill="#0C7D69" style="display: none;" />
-
-                        <!-- White checkmark (only visible when checked) -->
-                        <path class="tick" fill="#fff" d="M13.28 7.28l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.06 1.06Z" style="display: none;" />
-                    </svg>
-                    </label>
-                    
-                    <label for="consent">I confirm that I am at least 18 years old</label>
+            <div class="input-field">
+                    <div class="flex">
+                    <label for="password">Enter password</label>
+                    <input type="password" name="password" placeholder="Password">
+                    <div class="err-txt hidden noMatchPassword-err-txt">The password do not match</div>
+                    <div class="err-txt hidden password-err-txt">This field is required</div>
+                    <div class="err-txt hidden weakPassword-err-txt">Password must be at least 6 characters long and include uppercase, lowercase, a number, and a special character</div>
                 </div>
-                <div class="err-txt hidden consent-err-txt">You need to be 18 years and above</div>
+
+                <div class="flex">
+                    <label for="password">Re-enter password</label>
+                    <input type="password" name="rePassword" placeholder="Confirm password">
+                    <div class="err-txt hidden noMatchPassword-err-txt">The password do not match</div>
+                    <div class="err-txt hidden rePassword-err-txt">This field is required</div>
+                </div>
             </div>
 
-            <div class="consent-input-field">
-                <input type="checkbox" name="consent-term" value="consent-term" id="consent-term" class="hidden">
+            <div class="input-field">
+                    <div class="consent-input-field">
+                    <input type="checkbox" name="consent" value="consent" id="consent" class="hidden">
 
-                <div class="consent-flex">
-                    <label for="consent-term" class="check-box">
-                    <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                        <!-- Border box (square corners) -->
-                        <rect class="border" x="0.75" y="0.75" width="16.5" height="16.5" fill="none" stroke="#0C7D69" stroke-width="1.5" />
+                    <div class="consent-flex">
+                        <label for="consent" class="check-box">
+                        <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <!-- Border box (square corners) -->
+                            <rect class="border" x="0.75" y="0.75" width="16.5" height="16.5" fill="none" stroke="#0C7D69" stroke-width="1.5" />
 
-                        <!-- Filled background (only visible when checked) -->
-                        <rect class="fill-box" x="0.75" y="0.75" width="16.5" height="16.5" fill="#0C7D69" style="display: none;" />
+                            <!-- Filled background (only visible when checked) -->
+                            <rect class="fill-box" x="0.75" y="0.75" width="16.5" height="16.5" fill="#0C7D69" style="display: none;" />
 
-                        <!-- White checkmark (only visible when checked) -->
-                        <path class="tick" fill="#fff" d="M13.28 7.28l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.06 1.06Z" style="display: none;" />
-                    </svg>
-                    </label>
-                    
-                    <label for="consent-term">I agree to the Terms & Conditions</label>
+                            <!-- White checkmark (only visible when checked) -->
+                            <path class="tick" fill="#fff" d="M13.28 7.28l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.06 1.06Z" style="display: none;" />
+                        </svg>
+                        </label>
+                        
+                        <label for="consent">I'm at least 18 years old</label>
+                    </div>
+                    <div class="err-txt hidden consent-err-txt">You need to be 18 years and above</div>
                 </div>
-                <div class="err-txt hidden consent-err-txt">To submit this form, please agree to terms & conditions</div>
-            </div>      
+
+                <div class="consent-input-field">
+                    <input type="checkbox" name="consent-term" value="consent-term" id="consent-term" class="hidden">
+
+                    <div class="consent-flex">
+                        <label for="consent-term" class="check-box">
+                        <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <!-- Border box (square corners) -->
+                            <rect class="border" x="0.75" y="0.75" width="16.5" height="16.5" fill="none" stroke="#0C7D69" stroke-width="1.5" />
+
+                            <!-- Filled background (only visible when checked) -->
+                            <rect class="fill-box" x="0.75" y="0.75" width="16.5" height="16.5" fill="#0C7D69" style="display: none;" />
+
+                            <!-- White checkmark (only visible when checked) -->
+                            <path class="tick" fill="#fff" d="M13.28 7.28l-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.06 1.06Z" style="display: none;" />
+                        </svg>
+                        </label>
+                        
+                        <label for="consent-term">I agree to the Terms & Conditions</label>
+                    </div>
+                    <div class="err-txt hidden consent-err-txt">To submit this form, please agree to terms & conditions</div>
+                </div>
+            </div>
+
             <div class="submit flex">
                 <button type="submit">Register now</button>
             </div>      
@@ -159,7 +166,7 @@
             <p>Already have an account?</p>
             <a href="./login.html">Sign in</a>
         </div>	
-
+    </main>
     <footer>
          <small>Protected by 2FA & SSL Encryption</small>
 
