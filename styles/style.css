@@ -715,8 +715,9 @@ section.faq {
     padding-right: 2rem;
 }
 section.faq div.faq-cards {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     gap: 3rem;
     justify-content: center;
 }

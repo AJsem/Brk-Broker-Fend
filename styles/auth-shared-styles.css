@@ -64,18 +64,18 @@ form label {
 }
 
 form input {
-    background: var(--clr-bdr-main);
-    border-color: var(--clr-bdr-2);
+    background: var(--clr-bdr-main) !important;
+    border-color: var(--clr-bdr-2) !important;
     color: var(--clr-light);
     transition: .5s linear;
 }
 
 form input:hover {
-    border-color: var(--clr-bdr-1);
+    border-color: var(--clr-bdr-1) !important;
 }
 
 form input:focus {
-    border-color: var(--clr-light);
+    border-color: var(--clr-light) !important;
     outline: none;
     box-shadow: none;
 }
