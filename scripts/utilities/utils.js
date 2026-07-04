@@ -84,8 +84,7 @@ const updateSwiperYear = () => {
     const slideWidth = swiper.querySelector(".legacy-card").offsetWidth;
     const style = getComputedStyle(swiper);
     const gap = parseInt(style.columnGap || style.gap || 0);
-    console.log(slideWidth);
-    console.log("Gap: ", gap);
+    
     const yearsContainer = document.querySelector("section.our-legacy div.scroll-years");
 
     const allCards = document.querySelectorAll(

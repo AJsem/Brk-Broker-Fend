@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../../styles/auth-shared-styles.css">
     <link rel="icon" href="../../assets/images/favicon.ico">
 </head>
-<body id="top">
+<body id="top" data-page="login">
     <nav>
         <div class="name-logo">
             <h3 class="name">AitTrade</h3>
@@ -49,10 +49,12 @@
     </nav>
     <main class="container">
         <div class="intro-txt">
-            <h2>Welcome Back Trader</h2>
-            <p>Sign in to continue trading</p>
+            <p class="welcome">Welcome back!</p>
+            <h1>TRADER</h1>
         </div>
-        <form action="" novalidate>
+        <p class="instruct">Sign in to continue trading</p>
+        
+        <form class="sign-in" novalidate>
             <div class="input-group">
                 <label for="email">Email Address</label>
                 <input type="email" name="email">
@@ -66,13 +68,13 @@
             <div class="group remember">
                 <div class="options">
                     <label for="checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" name="checkbox">
                         <p>Remember Me</p>
                     </label>
                 </div>
                 <a href="./forgot-password.html">Forgot Password?</a>
-
             </div>
+
             <button type="submit">Sign In</button>
         </form>
 
@@ -85,7 +87,42 @@
             <p>Don't have an account?</p>
             <a href="./register.html">Create Account</a>
         </div>
+        
 
+        <section class="modals">
+            <div class="modal robot-check hidden"></div>
+
+            <div class="modal failed-log isNotUser hidden">
+                <div class="modal-box isNotUser">
+                    <h3>LOGIN FAILED</h3>
+                    <div>Username, email or password doesn't match our record</div>
+                    <button class="try-again" onclick="utils.tryAgainModalBtn(this)">Try again</button>
+                </div>
+            </div>
+
+            <div class="modal failed-reg internetIssue hidden">
+                <div class="modal-box">
+                    <h3>LOGIN FAILED</h3>
+                    <div>Sorry, connection issue detected. Please check your internet and try again.</div>
+                    <button class="try-again" onclick="utils.tryAgainModalBtn(this)">Try again</button>
+                </div>
+            </div>
+
+            <div class="modal loading hidden">
+                <div class="modal-box">
+                    <h3>LOADING...</h3>
+                    <div>Please exercise patience.</div>
+                </div>
+            </div>
+
+            <div class="modal failed-reg serverLogModal hidden">
+                <div class="modal-box">
+                    <h3>LOGIN FAILED</h3>
+                    <div>Sorry, connection issue detected. Please there is currently an issue with our server. Our team is working to resolve it.</div>
+                    <button class="try-again" onclick="utils.tryAgainModalBtn(this)">Try again</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -97,5 +134,6 @@
         </div>
     </footer>
     <script type="module" src="../../scripts/page/index.js" defer></script>
+    <script type="module" src="../../scripts/page/auth/login.js" defer></script>
 </body>
 </html>

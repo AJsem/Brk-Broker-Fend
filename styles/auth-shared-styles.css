@@ -51,6 +51,16 @@ div.intro-txt {
     margin-bottom: 2rem;
 }
 
+div.intro-txt p {
+    margin-top: -1rem;
+}
+
+main.container p.instruct {
+	border-bottom: .2rem solid var(--clr-bdr-2);
+	padding: .4rem 1rem;
+	border-radius: .5rem;
+}
+
 /* Form shared stylings */
 form {
     display: flex;
@@ -64,18 +74,18 @@ form label {
 }
 
 form input {
-    background: var(--clr-bdr-main) !important;
-    border-color: var(--clr-bdr-2) !important;
+    background: var(--clr-bdr-main);
+    border: .1rem solid var(--clr-bdr-2);
     color: var(--clr-light);
     transition: .5s linear;
 }
 
 form input:hover {
-    border-color: var(--clr-bdr-1) !important;
+    border-color: var(--clr-bdr-1);
 }
 
 form input:focus {
-    border-color: var(--clr-light) !important;
+    border-color: var(--clr-light)
     outline: none;
     box-shadow: none;
 }
@@ -127,12 +137,169 @@ main.container div.signUp {
     margin-top: 2rem;
 }
 
+/* Modal Box Stylings */
+section.modals div.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 1000;
+}
+
+section.modals div.modal-box {
+	font-size: 1.4rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 1rem;
+	width: 25rem;
+	border-radius: .5rem;
+	padding: 3rem;
+	background-color: var(--clr-primary);
+    border: .1rem solid var(--clr-bdr-2);
+	color: var(--clr-accent);
+}
+
+section.modals div.modal-box h3 {
+	color: var(--clr-light);
+}
+
+section.modals div.modal-box button {
+	padding: 1rem 3rem;
+	margin-top: 1rem;
+	border-radius: .5rem;
+	border: none;
+	font-weight: 500;
+	transition: .3s ease-in;
+	background: var(--clr-linear-btn);
+	color: var(--clr-light);
+}
+
+section.modals div.modal-box button:hover {
+	transform: scale(1.02);
+	background: var(--clr-light);
+    color: var(--clr-primary);
+}
+
+section.modals div.robot-check div.modal-box {
+	position: static;
+	width: 100%;
+	height: 100%;
+	transform: translate(0);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.robot-check div.modal-box div.boxes {
+	margin-top: 1rem;
+	display: grid;
+	width: 40vw;
+	max-width: 26rem;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+	align-content: center;
+	gap: 1rem;
+}
+
+div.modal-box div.boxes div.box {
+	padding: 1rem;
+	width: 12rem;
+	height: 12rem;
+	border: .2rem solid var(--clr-input-bdr-focus);
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(2, 1fr);
+	place-items: center;
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+	align-content: center;
+}
+
+div.modal-box div.boxes div.box.one-child {
+	grid-template-columns: 1fr;
+}
+
+div.boxes div.box div.drag-box {
+	width: 4.3rem;
+	height: 4.3rem;
+	border: .2rem solid black;
+	background: rgba(0, 0, 0, .7);
+	display: flex;
+	place-items: center;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+div.modal .subModal-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 500;
+	padding: 1rem 2rem;
+	box-shadow: .1rem .1rem 1rem 1rem var(--clr-bdr);
+	background-color: var(--clr-modal-spc);
+}
+
+div.modal .subModal-box div.textHead {
+	font-size: 1.5rem;
+	color: black;
+}
+
+div.modal .subModal-box div.text {
+	font-weight: 800;
+	margin-top: .3rem;
+	font-size: 2rem;
+	color: var(--clr-txt-heading);
+}
+
+div.text.cantSolve {
+	margin-top: 1rem !important;
+}
+
+div.text.cantSolve a {
+	color: var(--clr-bg-cont);
+	text-decoration: underline !important;
+}
+
+div.modal.robot-check .submit-check {
+	margin-top: 0;
+}
+
+div.robot-check div.modal-box a {
+	color: var(--clr-modal-spc);
+	text-decoration: none;
+	/*margin-top: 1rem;*/
+}
+
+div.robot-check div.modal-box a:hover {
+	color: var(--clr-gold-unique);
+}
+
+
+/* Footer stylings */
 footer {
     display: flex;
     flex-direction: column;
     height: fit-content;
     gap: 2rem;
-    z-index: 10;
+    z-index: 2;
     padding-bottom: 4rem;
     margin-top: 3rem;
 }

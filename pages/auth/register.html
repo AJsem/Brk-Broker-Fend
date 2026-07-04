@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../../styles/auth-shared-styles.css">
     <link rel="icon" href="../../assets/images/favicon.ico">
 </head>
-<body id="top">
+<body id="top" data-page="register">
     <nav>
         <div class="name-logo">
             <h3 class="name">AitTrade</h3>
@@ -166,6 +166,49 @@
             <p>Already have an account?</p>
             <a href="./login.html">Sign in</a>
         </div>	
+
+        <section class="modals">
+            <div class="modal robot-check hidden"></div>
+
+            <div class="modal failed-reg isAUser hidden">
+                <div class="modal-box">
+                    <h3>CAN'T CREATE ACCOUNT</h3>
+                    <div>There is an account associated with this the email. Try sign in instead</div>
+                    <button class="sign-in" onclick="window.location.href = 'login.html'">Sign in</button>
+                </div>
+            </div>
+
+            <div class="modal failed-reg internetIssue hidden">
+                <div class="modal-box">
+                    <h3>CAN'T CREATE ACCOUNT</h3>
+                    <div>Sorry, connection issue detected. Please check your internet and try again.</div>
+                    <button class="sign-in" onclick="helpers.tryAgainModalBtn(this)">Try again</button>
+                </div>
+            </div>
+
+            <div class="modal loading hidden">
+                <div class="modal-box">
+                    <h3>LOADING...</h3>
+                    <div>Please exercise patience.</div>
+                </div>
+            </div>
+
+            <div class="modal failed-reg serverLogModal hidden">
+                <div class="modal-box">
+                    <h3>CAN'T CREATE ACCOUNT</h3>
+                    <div>Sorry, connection issue detected. Please there is currently an issue with our server. We are working to resolve it.</div>
+                    <button class="try-again" onclick="helpers.tryAgainModalBtn(this)">Try again</button>
+                </div>
+            </div>
+
+            <div class="modal success-reg hidden">
+                <div class="modal-box">
+                    <h3>ACCOUNT CREATED SUCCESSFULLY</h3>
+                    <div>You have successfully created an account. Sign in now</div>
+                    <button class="sign-in" onclick="window.location.href = 'login.html'">Sign in</button>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
          <small>Protected by 2FA & SSL Encryption</small>
@@ -176,5 +219,6 @@
         </div>
     </footer>
     <script type="module" src="../../scripts/page/index.js" defer></script>
+    <script type="module" src="../../scripts/page/auth/register.js" defer></script>
 </body>
 </html>
