@@ -54,16 +54,16 @@
         </div>
         <p class="instruct">Fill the form below to get started</p>
 
-        <form action="" novalidate>
+        <form action="" class="sign-up" novalidate>
             <div class="input-field">
                 <div class="input firstname-input">
-                    <label for="firstname">Enter Firstname</label>
+                    <label for="firstname">Enter firstname</label>
                     <input type="text" id="firstname" name="firstname" placeholder="Firstname">
                     <div class="err-txt hidden firstname-err-txt">This field is required</div>
                 </div>
                 
                 <div class="input lastname-input">
-                    <label for="lastname">Enter Lastname</label>
+                    <label for="lastname">Enter lastname</label>
                     <input type="text" id="lastname" name="lastname" placeholder="Lastname">
                     <div class="err-txt hidden lastname-err-txt">This field is required</div>
                 </div>
@@ -86,11 +86,11 @@
                         <label for="female-sex" class="sex"><span>Female</span></label>
                     </div>
                 </div>
-                <div class="err-txt hidden sex-err-txt">Please select query type</div>
+                <div class="err-txt hidden sex-err-txt">Please select sex</div>
             </div>
 
             <div class="input-field">
-                    <div class="flex">
+                <div class="flex">
                     <label for="password">Enter password</label>
                     <input type="password" name="password" placeholder="Password">
                     <div class="err-txt hidden noMatchPassword-err-txt">The password do not match</div>
@@ -108,10 +108,10 @@
 
             <div class="input-field">
                     <div class="consent-input-field">
-                    <input type="checkbox" name="consent" value="consent" id="consent" class="hidden">
+                    <input type="checkbox" name="is-18" value="is-18" id="consent-18" class="hidden">
 
                     <div class="consent-flex">
-                        <label for="consent" class="check-box">
+                        <label for="consent-18" class="check-box">
                         <svg class="checkbox-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                             <!-- Border box (square corners) -->
                             <rect class="border" x="0.75" y="0.75" width="16.5" height="16.5" fill="none" stroke="#0C7D69" stroke-width="1.5" />
@@ -124,9 +124,9 @@
                         </svg>
                         </label>
                         
-                        <label for="consent">I'm at least 18 years old</label>
+                        <label for="consent-18">I'm at least 18 years old</label>
                     </div>
-                    <div class="err-txt hidden consent-err-txt">You need to be 18 years and above</div>
+                    <div class="err-txt hidden is18-err-txt">You need to be 18 years and above</div>
                 </div>
 
                 <div class="consent-input-field">
@@ -148,7 +148,7 @@
                         
                         <label for="consent-term">I agree to the Terms & Conditions</label>
                     </div>
-                    <div class="err-txt hidden consent-err-txt">To submit this form, please agree to terms & conditions</div>
+                    <div class="err-txt hidden terms-err-txt">To submit this form, please agree to terms & conditions</div>
                 </div>
             </div>
 

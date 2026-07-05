@@ -5,7 +5,7 @@ window.utils = {
 	tryAgainModalBtn: utils.tryAgainModalBtn
 };
 
-async function signInFunc() {
+async function signIn() {
 	const formEmail = document.querySelector("form.sign-in input[name='email']");
 	const formPassword = document.querySelector("form.sign-in input[name='password']");
     const checkbox = document.querySelector("form.sign-in input[name='checkbox']")
@@ -64,4 +64,4 @@ async function signInFunc() {
 }
 
 
-signInFunc();
+signIn();

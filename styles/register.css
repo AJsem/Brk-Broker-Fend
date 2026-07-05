@@ -87,12 +87,19 @@ main .flex {
 
 div.err-txt {
     font-size: 1.4rem;
+    color: var(--clr-secondary-2);
 }
 
 /*-----------checkedbox----------*/
 /*NOTE: Other checkbox styling are in radio query styling*/
 form .consent-input-field label {
     cursor: pointer;
+}
+
+form .consent-input-field .err-txt {
+    margin-top: 1.5rem;
+    text-align: left;
+    font-size: 1.2rem;
 }
 
 form .consent-flex {

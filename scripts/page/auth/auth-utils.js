@@ -29,6 +29,139 @@ function validateSignForm(inPut) {
 	return err;
 }
 
+function validateInput(inPut, errM, type) {
+	let err = 0;
+	if((typeof type) != 'string') {
+		console.log("Only strings accepted as type in validateInput()");
+		throw("Error: Invalid argument type");
+	}
+	
+	type = type.toLowerCase();
+	switch(type) {
+		case "email":
+			if (!emailRegexPattern.test(inPut.value.trim())) {
+				errM.classList.remove("hidden");
+				inPut.style.borderColor = errColor;
+				err = 1;
+			}
+			inPut.addEventListener("blur", () => {
+				if (emailRegexPattern.test(inPut.value.trim())) {
+					errM.classList.add("hidden");
+					inPut.style.borderColor = borderDefaultColor;
+				}		
+			});
+			break;
+		case "others":
+			if(inPut) {
+				if(inPut.value.trim() === "") {
+					inPut.style.borderColor = errColor;
+					errM.classList.remove("hidden");
+					err = 1;
+				}
+				inPut.addEventListener("blur", e => {
+					if(inPut.value.trim() !== "") {
+						inPut.style.borderColor = borderDefaultColor;
+						errM.classList.add("hidden");
+					}
+				});
+			}
+			break;
+		default:
+			console.log(`Unknown type "${type}" at validateInput()`);
+	}
+	
+	return err;
+}
+
+function matchPassword(passwords, errMs) {
+	let err = 0;
+
+	if (passwords[0].value.trim() === "" || passwords[1].value.trim() === "") {
+		return err;
+	} else if (passwords[0].value.trim() !== passwords[1].value.trim()) {
+		errMs.forEach(errM => {
+			errM.classList.remove("hidden");
+		});
+		err = 1;
+	} else {
+		errMs.forEach(errM => {
+			errM.classList.add("hidden");
+		});
+	}
+	return err;
+}
+
+function valiPassStrength(password, errM, callback) {
+	const err = callback();
+	let bool = false;
+
+	if(!err) {
+		bool = passwordRegexPattern.test(password.value.trim());
+		if(!bool) {
+			errM.classList.remove("hidden");
+			password.addEventListener("blur", () => {
+				bool = passwordRegexPattern.test(password.value.trim());
+				if(bool)
+					errM.classList.add("hidden");
+			});
+		}
+	}
+
+	return bool ? 0 : 1;
+}
+
+function queryValidate(inPut_1, inPut_2OrErr, errM) {
+	let err = 0;
+	if (!inPut_1.checked && !inPut_2OrErr.checked) {
+		errM.classList.remove("hidden");
+		err = 1;
+
+		inPut_1.addEventListener("change", () => errM.classList.add("hidden"));
+		inPut_2OrErr.addEventListener("change", () => errM.classList.add("hidden"));
+	} 	
+
+	return err;
+}
+
+function checkQueryIndex(query) {
+	let index = -1;
+	query.forEach((que, indx) => {
+		if (que.checked == true) {
+			index = indx;
+		}
+	})
+	return index;
+}
+
+function validateCheckbox(checkbox, errM) {
+	let err = 0;
+
+	if (!checkbox.checked) {
+		errM.classList.remove("hidden");
+		err = 1;
+
+		checkbox.addEventListener("change", () => errM.classList.add("hidden"));
+	}
+
+	return err;
+}
+
+const isOnline = async () => {
+	if (!navigator.onLine) return false;
+
+	try {
+		await fetch("https://www.google.com", 
+					{
+						method : "HEAD",
+						mode : "no-cors"
+					});
+		return true;
+	} catch(err) {
+		console.log(err);
+		return false;
+	}
+}
+
 const tryAgainModalBtn = function (el) {
 	const parent = el.parentElement.parentElement;
 	parent.classList.add("hidden");
@@ -37,5 +170,12 @@ const tryAgainModalBtn = function (el) {
 export default {
 	modal,
 	validateSignForm,
+	validateInput,
+	matchPassword,
+	valiPassStrength,
+	queryValidate,
+	checkQueryIndex,
+	validateCheckbox,
+	isOnline,
 	tryAgainModalBtn
 }
