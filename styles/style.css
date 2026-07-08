@@ -231,7 +231,7 @@ nav ul.links li a {
     color: var(--clr-txt);
 }
 
-nav ul.links li a.c-opened {
+nav ul.links li a.c-opened a {
     font-weight: 500;
     color: var(--clr-pri-subtle);
 }
@@ -951,10 +951,6 @@ h3 {
     section.hero div.hero-content p.descript {
         grid-row: span 3;
     }
-
-    nav ul.links {
-        width: 40%;
-    }
 }
 
 @media (min-width: 800px) {
@@ -975,7 +971,66 @@ h3 {
     }
 
     nav ul.links {
-        width: 40%;
+        position: static; 
+        background: transparent;
+        width: revert;
+        height: initial; 
+        transform: translateX(0%); 
+        top: 0rem; 
+        flex-direction: row; 
+        padding: 0;
+        border: none; 
+        font-size: 1.6rem;
+        gap: 1rem;
+    }
+
+    nav ul.links li {
+        text-transform: capitalize;
+        padding: .5 1.5rem;
+        border-radius: 0;
+        border: none;
+        border-bottom: .1rem solid transparent;
+    }
+
+    nav ul.links li:hover {
+        border-color: var(--clr-bdr-1);
+        opacity: .8;
+    }
+
+    nav.scrolled ul.links li:hover {
+        border-color: var(--clr-txt);
+    }
+
+    nav ul.links li a {
+        color: var(--clr-accent);
+    }
+
+    nav.scrolled ul.links li a {
+        color: var(--clr-primary);
+    }
+
+    nav ul.links li a:hover {
+        text-decoration: none;
+    }
+
+    nav ul.links li.c-opened {
+        display: none;
+    }
+
+    nav ul.links li.c-opened a {
+        opacity: .6;
+    }
+
+    nav ul.links > :last-child {
+        margin-bottom: 0rem;
+    }
+
+    div.nav-btn {
+        display: none;
+    }
+
+    .hide_1, .hide_2 {
+        display: none;
     }
 
     section.our-legacy div.scroll-years {
@@ -985,10 +1040,36 @@ h3 {
     }
 }
 
+@media (min-width: 930px) {
+    .hide_1, .hide_2 {
+        display: block;
+    }
+
+    nav ul.links {
+        gap: 1.5rem;
+    }
+}
+
 @media (min-width: 1050px) {
+    main.container,
+    nav, footer {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+
+    nav ul.links {
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
     main.container,
     nav, footer {
         padding-left: 12rem;
         padding-right: 12rem;
+    }
+
+    nav ul.links {
+        gap: 3rem;
     }
 }
