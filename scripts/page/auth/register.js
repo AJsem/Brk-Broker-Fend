@@ -5,7 +5,7 @@ window.utils = {
 	tryAgainModalBtn: utils.tryAgainModalBtn
 };
 
-function signUp() {
+async function signUp() {
     const submitBtn = document.querySelector("form.sign-up button[type='submit']");
 
     submitBtn.addEventListener('click', async (e) => {
@@ -13,8 +13,22 @@ function signUp() {
         try {
             const isValidForm = await validateForm();
             
-            if(true === isValidForm) {
-                alert("Account: Created");
+            if(true == isValidForm.success) {
+                const pUser = postUser();
+
+
+                if(true == true) {
+                    const rep = await pUser;
+
+                    if(!rep?.success) {
+                        utils.formErrorHandler(rep.code);
+                    } else {
+                        window.location.href = "dashboard.html";
+                    }
+                    // After dbase check and wrong log, then
+                    // failedLogModal.classList.remove("hidden")
+                }
+
             }
         } catch(err) {
             console.error(err);
@@ -58,13 +72,26 @@ function validateForm() {
             isValidReg += utils.validateCheckbox(formD.consentIs18, errTxt.consentIs18);
             isValidReg += utils.validateCheckbox(formD.consentTerms, errTxt.consentTerms);
         } catch(err) {
-            console.log(err);
+            console.error(err);
         }
     
         if(!isValidReg) {
-            resolve(true);
+            const queryIndex = utils.checkQueryIndex(formD.sex);
+            formD.email.focus();
+            resolve({
+                success: true,
+                data: JSON.stringify({
+                    firstname: formD.firstname,
+                    lastname: formD.lastname,
+                    email: formD.email,
+                    sex: formD.sex[queryIndex].value,
+                    password: formD.password
+                })
+            });
         } else {
-            reject(false);
+            reject({
+                success: false
+            });
         }
     });
 
@@ -74,6 +101,46 @@ function validateForm() {
         isValidReg += utils.validateInput(formD.rePassword, errTxt.rePassword, "others");
         isValidReg += utils.matchPassword([formD.password, formD.rePassword], errTxt.passNoMatch);
         return isValidReg;
+    }
+}
+
+const postUser = async (regData) => {
+    try {
+        const res = await fetch("http://localhost:6035/api/user/auth/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: regData
+        });
+
+        const data = await res.json();
+
+        if(!res.ok) {
+            const error = new Error(rep.message);
+            error.success = rep.success;
+            error.status = res.status;
+            throw error;
+        }
+
+        return rep;
+    } catch (err) {
+        const isOnline = await utils.isOnline();
+        if (err instanceof TypeError) {
+            err.code = "SERVER_CONNECTION_ERROR";
+        } else if(!isOnline) {
+            err.code = "NO_INTERNET_CONNECTION";
+        } else {
+            if(err.status === 401) {
+                err.code = "INVALID_CREDENTIALS";
+            } else if(err.status === 500) {
+                err.code = "SERVER_ERROR";
+            } else {            
+                err.code = "UNKNOWN_ERROR";
+            }
+        }
+
+        return {err: err.message, code: err.code};
     }
 }
 

@@ -51,3 +51,7 @@ form div.group div.options label {
     gap: .5rem;
     align-items: center;
 }
+
+form label[for="checkbox"], form label input[type="checkbox"] {
+    cursor: pointer;
+}

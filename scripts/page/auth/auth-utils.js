@@ -167,6 +167,40 @@ const tryAgainModalBtn = function (el) {
 	parent.classList.add("hidden");
 }
 
+const formErrorHandler = function (errCode) {
+	switch(errCode) {		
+		// Below are error(s) related to SignIn Page only
+		case "INVALID_CREDENTIALS":
+			modal.failedLog.classList.remove("hidden");	
+			break;
+		// Below are errors related to SignUp Page only
+		case "USER_EXISTS":
+			modal.userExistReg.classList.remove("hidden");
+			break;
+		case "INVALID_FIELDS":
+			modal.serverDown.classList.remove("hidden");
+			break;
+		case "PENDING_ERROR":
+			window.alert("Your account is creating is pending. Please check your email for the verification link. If you haven't received the email, please contact support with error code: ERX4001");
+			break;
+		// Below are errors related to both pages
+		case "NO_INTERNET_CONNECTION":
+			modal.noInternet.classList.remove("hidden");
+			break;
+		case "SERVER_CONNECTION_ERROR":
+			modal.serverDown.classList.remove("hidden");
+			break;	
+		case "SERVER_ERROR":
+			modal.serverDown.classList.remove("hidden");
+			break;
+		case "UNKNOWN_ERROR":
+			modal.serverDown.classList.remove("hidden");
+			break;
+		default:
+			modal.serverDown.classList.remove("hidden");
+	}
+}
+
 export default {
 	modal,
 	validateSignForm,
@@ -177,5 +211,6 @@ export default {
 	checkQueryIndex,
 	validateCheckbox,
 	isOnline,
-	tryAgainModalBtn
+	tryAgainModalBtn,
+	formErrorHandler
 }
