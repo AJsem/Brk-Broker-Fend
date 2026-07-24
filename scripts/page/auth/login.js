@@ -49,7 +49,7 @@ async function signIn() {
 
 async function postUser(user_email, password, rememberMe) {
 	try {
-		const res = await fetch("http://localhost:6035/api/user/auth/login", {
+		const res = await fetch("https://brk-broker-bend.onrender.com/api/user/auth/login", {
 			method : "POST",
 			headers : {
 				"Content-Type" : "application/json"

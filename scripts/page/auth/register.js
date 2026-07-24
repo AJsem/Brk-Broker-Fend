@@ -106,7 +106,7 @@ function validateForm() {
 
 const postUser = async (regData) => {
     try {
-        const res = await fetch("http://localhost:6035/api/user/auth/register", {
+        const res = await fetch("https://brk-broker-bend.onrender.com/api/user/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
