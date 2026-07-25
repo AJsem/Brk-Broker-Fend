@@ -184,6 +184,9 @@ const formErrorHandler = function (errCode) {
 			window.alert("Your account is creating is pending. Please check your email for the verification link. If you haven't received the email, please contact support with error code: ERX4001");
 			break;
 		// Below are errors related to both pages
+		case "SUCCESS":
+			modal.successReg.classList.remove("hidden");
+			break;
 		case "NO_INTERNET_CONNECTION":
 			modal.noInternet.classList.remove("hidden");
 			break;

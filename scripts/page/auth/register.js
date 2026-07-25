@@ -14,16 +14,17 @@ async function signUp() {
             const isValidForm = await validateForm();
             
             if(true == isValidForm.success) {
-                const pUser = postUser();
+                const pUser = postUser(isValidForm.data);
 
 
                 if(true == true) {
                     const rep = await pUser;
+                    console.log(rep);
 
-                    if(!rep?.success) {
+                    if(rep.success === false) {
                         utils.formErrorHandler(rep.code);
                     } else {
-                        window.location.href = "dashboard.html";
+                        utils.formErrorHandler("SUCCESS");
                     }
                     // After dbase check and wrong log, then
                     // failedLogModal.classList.remove("hidden")
@@ -81,16 +82,17 @@ function validateForm() {
             resolve({
                 success: true,
                 data: JSON.stringify({
-                    firstname: formD.firstname,
-                    lastname: formD.lastname,
-                    email: formD.email,
+                    firstname: formD.firstname.value,
+                    lastname: formD.lastname.value,
+                    email: formD.email.value,
                     sex: formD.sex[queryIndex].value,
-                    password: formD.password
+                    password: formD.password.value
                 })
             });
         } else {
             reject({
-                success: false
+                success: false,
+                destination: "ValidatedForm"
             });
         }
     });
@@ -114,7 +116,7 @@ const postUser = async (regData) => {
             body: regData
         });
 
-        const data = await res.json();
+        const rep = await res.json();
 
         if(!res.ok) {
             const error = new Error(rep.message);
@@ -131,16 +133,22 @@ const postUser = async (regData) => {
         } else if(!isOnline) {
             err.code = "NO_INTERNET_CONNECTION";
         } else {
-            if(err.status === 401) {
-                err.code = "INVALID_CREDENTIALS";
+            if(err.status === 409) {
+                err.code = "USER_EXISTS";
+            } else if(err.status === 401 || err.status === 400) {
+                err.code = "INVALID_FIELDS";
             } else if(err.status === 500) {
-                err.code = "SERVER_ERROR";
+                if(err.success === "Pending") {
+                    err.code = "PENDING_ERROR";
+                } else {
+                    err.code = "SERVER_ERROR";
+                }
             } else {            
                 err.code = "UNKNOWN_ERROR";
             }
         }
 
-        return {err: err.message, code: err.code};
+        return {success: false, err: err.message, code: err.code};
     }
 }
 
