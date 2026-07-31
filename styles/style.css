@@ -283,15 +283,17 @@ main section.hero::before {
 }
 
 section.hero div.trusted {
+    width: fit-content;
     color: var(--clr-light);
     margin-top: 10rem;
     position: relative;
-    font-size: 1.4rem;
-    padding: .3rem 2rem;
-    border-radius: 3rem;
+    font-size: 1.3rem;
+    padding: .3rem 1.2rem;
+    border-radius: 2rem;
     border: .1rem solid var(--clr-bdr-1);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: .5rem;
 }
 
