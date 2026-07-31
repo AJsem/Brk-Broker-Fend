@@ -34,7 +34,7 @@ async function signIn() {
 					if(!rep?.success) {
 						utils.formErrorHandler(rep.code);
 					} else {
-						window.location.href = "dashboard.html";
+						window.location.href = "../../dashboard.html";
 					}
 					// After dbase check and wrong log, then
 					// failedLogModal.classList.remove("hidden")
