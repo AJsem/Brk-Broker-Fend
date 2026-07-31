@@ -270,7 +270,7 @@ main section.hero::before {
 
     /* background-image: url("../assets/images/horo-image.jpeg"); */
     background: linear-gradient(to bottom,rgba(0, 0, 20, .4), var(--clr-primary)),
-                url("../assets/images/horo-image.jpeg");
+                url("../assets/images/hero-image.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -290,6 +290,19 @@ section.hero div.trusted {
     padding: .3rem 2rem;
     border-radius: 3rem;
     border: .1rem solid var(--clr-bdr-1);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+section.hero div.trusted div.trusted-img {
+    width: 1.7rem;
+    height: auto;
+}
+
+section.hero div.trusted div.trusted-img img {
+    width: 100%;
+    height: auto;
 }
 
 section.hero div.trusted::before {
@@ -874,6 +887,10 @@ footer li
 }
 
 /* UTILITIES  STYLINGS */
+br.br-1, br.br-2, br.br-3 {
+    display: none;
+}
+
 a, button {
     transition: 300ms ease-in;
 }
@@ -929,13 +946,21 @@ h3 {
 }
 
 @media (min-width: 680px) {
+    br.br-3 {
+        display: none;
+    }
+
+    br.br-1 {
+        display: block;
+    }
+
     section.hero {
         max-width: none;
     }
 
     section.hero div.hero-content {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 3fr 2fr;
         /* column-gap: 4rem; */
     }
 
@@ -1037,6 +1062,22 @@ h3 {
         display: flex;
         align-self: space-evenly;
         justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 807px) {
+    br.br-2 {
+        display: none !important;
+    }
+}
+
+@media (min-width: 900px) {
+    br.br-1 {
+        display: none;
+    }
+
+    br.br-3 {
+        display: block;
     }
 }
 

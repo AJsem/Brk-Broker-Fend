@@ -5,4 +5,11 @@ main.container {
     height: 100%;
     display: flex;
     place-items: center;
+    background: url("../assets/images/hero-image.png");
+    background-position: cover;
+    background-repeat: no-repeat;
+}
+
+main.container p {
+    opacity: .8;
 }

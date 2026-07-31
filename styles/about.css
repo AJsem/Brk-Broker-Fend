@@ -9,6 +9,23 @@ section {
     font-size: 1.6rem;
 }
 
+section p {
+    opacity: .8;
+}
+
+section.hero-about div.hero-image {
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+section.hero-about div.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
 section.why-choose-us,
 section.our-features {
     width: 100%;

@@ -8,10 +8,10 @@
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/userShared">
+    <link rel="stylesheet" href="styles/userShared.css">
     <link rel="icon" href="assets/images/favicon.ico">
 </head>
-<body id="top" data-page="index">
+<body id="top" data-page="dashboard">
     <nav>
         <div class="name-logo">
             <h3 class="name">AitTrade</h3>
@@ -32,7 +32,7 @@
             <li><a href="pages/auth/register.html">Register</a></li>
         </ul>
     </nav>
-    <div class="floating-nav">
+    <div class="floating-nav hidden">
         <div class="icon">
             <div class="img"><img src="" alt=""></div>
             <p>Home</p>
@@ -54,10 +54,292 @@
             <p>Assets</p>
         </div>
     </div>
-    <main class="container">
-        <div class="name welcome">
-            <span>Hello, <span id="firstname">Trader</span></span>
+
+        <div class="name-notification">
+            <div class="welcome">
+                <div>Hello, <span id="firstname">Trader</span><span class="icon"><img src="./assets/images/waving-hand.svg" alt=""></span></div>
+                <div class="welcome-txt">Welcome back! Ready to trade today?</div>
+            </div>
+            <div class="notification-icon">
+                <div class="icon-bell"><img src="./assets/images/bell.svg" alt="Notification"></div>
+                <div class="notification-count"><span id="notification-count">0</span></div>
+            </div>
         </div>
+        <div class="accountType">
+            <div class="flex">
+                <div class="icon-txt">
+                    <div class="innerCirle">
+                        <p>S</p>
+                    </div>
+                </div>
+                <div class="type">
+                    <span class="name">Standard Account</span>
+                    <span class="accountId"></span>
+                </div>
+            </div>
+            <div class="upgrade">
+                <span class="icon"><img src="" alt=""></span>
+                <p>Upgrade</p>
+            </div>
+        </div>
+
+        <section class="balanceContainer">
+            <div class="balance">
+                <div class="flex info">
+                    <div class="icon"><img src="./assets/images/balance-icon.png" alt=""></div>
+                    <div class="titleAmount">
+                        <div class="title">Total Balance</div>
+                        <div class="amount">$<span>5,2400.00</span></div>
+                    </div>
+                    <div class="eye-toggle-hide-balance">
+						<!-- Eye Open -->
+						<svg xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="eye-show hidden">
+							<path d="M12 5C5 5 1 12 1 12s4 7 11 7 11-7 11-7-4-7-11-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/>
+						</svg>
+
+						<!-- Eye Off -->
+						<svg xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="eye-off">
+
+							<path d="M17.94 17.94A10.94 10.94 0 0 1 12 19C5 19 1 12 1 12a21.77 21.77 0 0 1 5.06-5.94"/>
+
+							<path d="M9.9 4.24A10.94 10.94 0 0 1 12 5c7 0 11 7 11 7a21.8 21.8 0 0 1-4.16 5.19"/>
+
+							<path d="M14.12 14.12A3 3 0 0 1 9.88 9.88"/>
+
+							<path d="M1 1l22 22"/>
+						</svg>
+					</div>
+                </div>
+                <div class="moreInfo">
+                    <div class="title">Available Balance</div>
+                    <div class="amount">$<span>3,2400.00</span></div>
+                </div>
+            </div>
+
+            <div class="equity">
+                <div class="flex info">
+                    <div class="icon"><img src="./assets/images/equity-icon.png" alt=""></div>
+                    <div class="titleAmount">
+                        <div class="title">Equity</div>
+                        <div class="amount">$<span>5,2700.00</span></div>
+                    </div>
+                    <div class="eye-toggle-hide-balance">
+						<!-- Eye Open -->
+						<svg xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="eye-show hidden">
+							<path d="M12 5C5 5 1 12 1 12s4 7 11 7 11-7 11-7-4-7-11-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/>
+						</svg>
+
+						<!-- Eye Off -->
+						<svg xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="eye-off">
+
+							<path d="M17.94 17.94A10.94 10.94 0 0 1 12 19C5 19 1 12 1 12a21.77 21.77 0 0 1 5.06-5.94"/>
+
+							<path d="M9.9 4.24A10.94 10.94 0 0 1 12 5c7 0 11 7 11 7a21.8 21.8 0 0 1-4.16 5.19"/>
+
+							<path d="M14.12 14.12A3 3 0 0 1 9.88 9.88"/>
+
+							<path d="M1 1l22 22"/>
+						</svg>
+					</div>
+                </div>
+                <div class="moreInfo">
+                    <div class="title">Margin Used</div>
+                    <div class="amount">$<span>640.00</span></div>
+                </div>
+            </div>
+
+            <div class="pnl">
+                <div class="flex info">
+                    <div class="icon"><img src="./assets/images/pnl-icon.png" alt=""></div>
+                    <div class="titleAmount">
+                        <div class="title">Today's P/L</div>
+                        <div class="amount">
+                            <span class="sign">+$</span>
+                            <span class="profit">5,2700.00</span>
+                        </div>
+                    </div>
+                    <div class="eye-toggle-hide-balance">
+						<!-- Eye Open -->
+						<svg xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="eye-show hidden">
+							<path d="M12 5C5 5 1 12 1 12s4 7 11 7 11-7 11-7-4-7-11-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/>
+						</svg>
+
+						<!-- Eye Off -->
+						<svg xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="eye-off">
+
+							<path d="M17.94 17.94A10.94 10.94 0 0 1 12 19C5 19 1 12 1 12a21.77 21.77 0 0 1 5.06-5.94"/>
+
+							<path d="M9.9 4.24A10.94 10.94 0 0 1 12 5c7 0 11 7 11 7a21.8 21.8 0 0 1-4.16 5.19"/>
+
+							<path d="M14.12 14.12A3 3 0 0 1 9.88 9.88"/>
+
+							<path d="M1 1l22 22"/>
+						</svg>
+					</div>
+                </div>
+                <div class="moreInfo">
+                    <div class="percent"><span>+10.5%</span></div>
+                    <div class="change">vs yesterday</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="positions">
+            <div class="top">
+                <p>Open Positions</p>
+                <a href="pages/user/position.html" class="">View All</a>
+            </div>
+            <div class="positions-list">
+                <!-- Position items will be dynamically inserted here -->
+                 <div class="position">
+                    <div class="nameType">
+                        <div class="icon"><img src="" alt=""></div>
+                        <div class="nameContainer">
+                            <div class="name">BTC/USDT</div>
+                            <div class="volume">0.15</div>
+                        </div>
+                        <div class="type">Long</div>
+                    </div>
+                    <div class="price">
+                        <div class="currentPrice">$67,890.12</div>
+                        <div class="entryPrice">Entry: $45,678.90</div>
+                    </div>
+                    <div class="pnl">
+                        <div class="amount">+$1,234.56</div>
+                        <div class="percent">+2.5%</div>
+                    </div>
+                 </div>
+
+                 <div class="position">
+                    <div class="nameType">
+                        <div class="icon"><img src="" alt=""></div>
+                        <div class="nameContainer">
+                            <div class="name">BTC/USDT</div>
+                            <div class="volume">0.15</div>
+                        </div>
+                        <div class="type">Long</div>
+                    </div>
+                    <div class="price">
+                        <div class="currentPrice">$67,890.12</div>
+                        <div class="entryPrice">Entry: $45,678.90</div>
+                    </div>
+                    <div class="pnl">
+                        <div class="amount">+$1,234.56</div>
+                        <div class="percent">+2.5%</div>
+                    </div>
+                 </div>
+
+                 <div class="position">
+                    <div class="nameType">
+                        <div class="icon"><img src="" alt=""></div>
+                        <div class="nameContainer">
+                            <div class="name">BTC/USDT</div>
+                            <div class="volume">0.15</div>
+                        </div>
+                        <div class="type">Long</div>
+                    </div>
+                    <div class="price">
+                        <div class="currentPrice">$67,890.12</div>
+                        <div class="entryPrice">Entry: $45,678.90</div>
+                    </div>
+                    <div class="pnl">
+                        <div class="amount">+$1,234.56</div>
+                        <div class="percent">+2.5%</div>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <section class="markets">
+            <div class="top">
+                <p>Market Overview</p>
+                <a href="pages/user/markets.html" class="">View All</a>
+            </div>
+
+            <div class="market-list">
+                <div class="market">
+                    <div class="nameIcon">
+                        <div class="icon"><img src="" alt=""></div>
+                        <div class="name">BTC/USDT</div>
+                    </div>
+                    <div class="price">
+                        $74,729.28
+                    </div>
+
+                    <div class="percent"><span class="value">+3.22</span>%</div>
+                </div>
+                    
+            </div>
+        </section>
+
+        <section class="activities">
+            <div class="top">
+                <p>Market Overview</p>
+                <a href="pages/user/markets.html" class="">View All</a>
+            </div>
+
+            <div class="activities-list">
+                <div class="activity">
+                    <div class="nameType">
+                        <div class="icon"><img src="" alt=""></div>
+                        <div class="nameContainer">
+                            <div class="name">Deposit</div>
+                            <div class="type">USDT</div>
+                        </div>
+                    </div>
+                    
+                    <div class="amount-time">
+                        <div class="amount">+$<span>493.00</span></div>
+                        <div class="date"><span class="day">12</span>th <span class="month">Month</span></div>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <div class="nameType">
+                        <div class="icon"><img src="" alt=""></div>
+                        <div class="nameContainer">
+                            <div class="name">Transfer</div>
+                            <div class="type">To Trading Wallet</div>
+                        </div>
+                    </div>
+                    
+                    <div class="amount-time">
+                        <div class="amount">+$<span>93.00</span></div>
+                        <div class="date"><span class="day">12</span>th <span class="month">Month</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>

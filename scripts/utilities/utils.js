@@ -1,18 +1,18 @@
 let bool = false;
 
-const scrolledNav = () => {
+const scrolledNav = (value) => {
     const navBar = document.querySelector("nav");
 
     window.addEventListener("scroll", () => {
-        if(window.scrollY > 63)
+        if(window.scrollY > value)
             navBar.classList.add("scrolled");
         else
             navBar.classList.remove("scrolled");
     });
 }
 
-const navigation = () => {
-    scrolledNav();
+const navigation = (value) => {
+    scrolledNav(value);
     const navBtn = document.querySelector('nav .nav-btn');
     const dropDown = document.querySelector('nav .links');
 
